@@ -3,8 +3,8 @@ const container = document.querySelector("#container");
 container.style.cssText = `
   display: flex;
   flex-wrap: wrap;
-  width: 640px;
-  height: 640px;
+  width: 600px;
+  height: 600px;
   border: 3px solid #ccc;
 `;
 
@@ -42,7 +42,7 @@ function changeGrid() {
 
 // 7. Function: build the grid
 function generateGrid(gridSize) {
-    const squareSize = 640 / gridSize;
+    const squareSize = 600 / gridSize;
     container.innerHTML = ""; // clear old grid
 
     for (let i = 0; i < gridSize * gridSize; i++) {
@@ -65,3 +65,12 @@ function generateGrid(gridSize) {
         container.append(square);
     }
 }
+
+const restartButton = document.createElement("button");
+restartButton.textContent = "Restart Game";
+restartButton.addEventListener("click", () => {
+    generateGrid(16); // resets to default 16x16 grid
+});
+
+
+document.body.insertBefore(restartButton, container);
