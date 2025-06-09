@@ -66,6 +66,7 @@ function generateGrid(gridSize) {
     }
 }
 
+
 const restartButton = document.createElement("button");
 restartButton.textContent = "Restart Game";
 restartButton.addEventListener("click", () => {
