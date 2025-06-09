@@ -18,20 +18,19 @@ button.style.cssText = `
   margin: 10px 0;
 `;
 
-// 3. Add button click handler
+// 3. Add button click handler to prompt and generate new grid
 button.addEventListener("click", () => {
-    const gridSize = changeGrid();
-    generateGrid(gridSize);
+    const gridSize = changeGrid();  // prompts user
+    generateGrid(gridSize);         // builds new grid
 });
 
-// 4. Append the button to the document (e.g. body or above container)
-document.body.insertBefore(button, container); // add above the grid
+// 4. Append the button to the document (above the grid)
+document.body.insertBefore(button, container);
 
-// 5. Prompt for initial grid and generate it
-const initialGridSize = changeGrid();
-generateGrid(initialGridSize);
+// 5. Generate the default 16×16 grid
+generateGrid(16);
 
-// 6. Function to prompt user for a valid grid size
+// 6. Function: prompt for valid grid size
 function changeGrid() {
     let num;
     do {
@@ -41,7 +40,7 @@ function changeGrid() {
     return num;
 }
 
-// 7. Function to generate the grid
+// 7. Function: build the grid
 function generateGrid(gridSize) {
     const squareSize = 640 / gridSize;
     container.innerHTML = ""; // clear old grid
