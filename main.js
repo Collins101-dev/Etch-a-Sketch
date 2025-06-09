@@ -68,7 +68,7 @@ function generateGrid(gridSize) {
 
 
 const restartButton = document.createElement("button");
-restartButton.textContent = "Restart Game";
+restartButton.textContent = "Restart The Game";
 restartButton.addEventListener("click", () => {
     generateGrid(16); // resets to default 16x16 grid
 });
